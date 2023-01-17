@@ -4,7 +4,7 @@ type Props = {}
 
 const Teste = (props: Props) => {
   return (
-    <div className="bg-zinc-200">Teste</div>
+    <div className="bg-zinc-900 w-10px h-10">Teste</div>
   )
 }
 
