@@ -19,7 +19,7 @@ export default function App() {
   })
 
   if(!fontsLoaded){
-    return <Loading/>
+    return (<Loading/>)
   }
 
   
