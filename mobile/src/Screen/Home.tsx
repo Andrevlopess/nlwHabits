@@ -19,10 +19,10 @@ const amountOfDaysToFill = minimumSummaryDatesSizez - datesFromYearStart.length
 
 export function Home() {
     return (
-        <View className="flex-1 bg-background p-9 pt-16">
+        <View className="flex-1 bg-background px-8 pt-16">
             <Header />
 
-            <View className="flex-row -mt-6 mb-2">
+            <View className="flex-row mt-6 mb-2">
 
                 {weekDays.map((day, i) => (
                     <Text
@@ -35,7 +35,9 @@ export function Home() {
                 ))
                 }
             </View>
-            <ScrollView showsHorizontalScrollIndicator={false} contentContainerStyle={{padding:100}}>
+            <ScrollView 
+            showsHorizontalScrollIndicator={false}
+             contentContainerStyle={{paddingBottom:100}}>
                 <View className="flex-row flex-wrap">
                     {
                         datesFromYearStart.map(date => (
