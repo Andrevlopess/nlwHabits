@@ -1,14 +1,19 @@
-import Teste from './Components/Teste';
+import { Plus } from 'phosphor-react'
 import './Styles/global.css';
+import logoImage from './Assets/logoImage.svg'
+import Header from './Components/Header';
+import SummaryTable from './Components/SummaryTable';
 
-
-function App() {
+export function App() {
 
   return (
-    <div className="">
-      <Teste/>
+    <div className="w-screen h-screen flex justify-center items-center">
+      <div className='w-full max-w-5xl px-6 flex flex-col gap-16'>
+        <Header />
+        <SummaryTable/>
+      </div>
+
     </div>
   )
 }
 
-export default App
