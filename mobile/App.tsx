@@ -9,6 +9,7 @@ import {
 } from '@expo-google-fonts/inter';
 import {Loading} from './src/Components/Loading';
 import { Home } from './src/Screen/Home';
+import { Routes } from './src/Routes';
 
 export default function App() {
 
@@ -27,7 +28,7 @@ export default function App() {
 
   return (
     <>
-      <Home/>
+      <Routes/>
       <StatusBar barStyle="light-content" backgroundColor="transparent" translucent/>
     </>
   );
