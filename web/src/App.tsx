@@ -2,6 +2,7 @@ import { Plus } from 'phosphor-react'
 import './Styles/global.css';
 import logoImage from './Assets/logoImage.svg'
 import Header from './Components/Header';
+import './lib/dayjs'
 import SummaryTable from './Components/SummaryTable';
 
 export function App() {
