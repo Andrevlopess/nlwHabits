@@ -1,6 +1,8 @@
 import * as Popover from '@radix-ui/react-popover'
+import * as CheckBox from '@radix-ui/react-checkbox'
 import { Progressbar } from './ProgressBar'
 import clsx from 'clsx'
+import { Check } from 'phosphor-react'
 
 type Props = {
   completed: number,
@@ -33,6 +35,25 @@ const HabitDay = (props: Props) => {
           <span className='mt-1 font-extrabold leading-tight text-3xl'>17/01</span>
 
           <Progressbar progress={completedPerentage} />
+
+          <div className='mt-6 flex flex-col gap-3'>
+
+            <CheckBox.Root className='flex items-center gap-3 group'>
+
+              <div className='h-8 w-8 flex bg-zinc-900 items-center border-2 justify-center border-zinc-800 rounded-lg group-data-[state=checked]:bg-green-500 group-data-[state=checked]:border-green-500'>
+                <CheckBox.Indicator>
+                  <Check size={20} className='text-white'/>
+                </CheckBox.Indicator>
+              </div>
+
+
+              <span className='font-bold text-xl leading-tight text-white 
+              group-data-[state=checked]:line-through group-data-[state=checked]:text-zinc-400'>
+                  Estudar typescript
+              </span>
+            </CheckBox.Root>
+
+          </div>
           <Popover.Arrow height={8} width={16} className="fill-zinc-900" />
         </Popover.Content>
       </Popover.Portal>
