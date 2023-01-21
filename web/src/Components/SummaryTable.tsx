@@ -59,7 +59,7 @@ const SummaryTable = (props: Props) => {
             </div>
 
             <div className='grid grid-rows-7 grid-flow-col gap-3'>
-                {summaryDates.map(date => {
+                {!!summary.length && summaryDates.map(date => {
 
                     const dayInSummary = summary.find(day => {
                         return dayjs(date).isSame(day.date, 'day')
@@ -69,7 +69,7 @@ const SummaryTable = (props: Props) => {
                         <HabitDay
                             date={date}
                             amount={dayInSummary?.amount}
-                            completed={dayInSummary?.completed}
+                            defaultCompleted={dayInSummary?.completed}
                             key={date.toString()} />
                     )
                 })}
