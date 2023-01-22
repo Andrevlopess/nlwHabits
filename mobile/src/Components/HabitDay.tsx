@@ -22,8 +22,6 @@ export const HabitDay = ({ amountOfHabits = 0, amoutCompleted = 0, date, ...rest
 
     const today = dayjs().startOf('day').toDate();
     const isCurrentDay = dayjs(date).isSame(today)
-
-    console.log(isCurrentDay);
     
 
     return (
@@ -34,13 +32,13 @@ export const HabitDay = ({ amountOfHabits = 0, amoutCompleted = 0, date, ...rest
                 ["bg-violet-900 border-violet-700"] : 
                 amoutAccomplidshedPercentage > 0 && amoutAccomplidshedPercentage < 20,
                 ["bg-violet-800 border-violet-600"] : 
-                amoutAccomplidshedPercentage > 20 && amoutAccomplidshedPercentage < 40,
+                amoutAccomplidshedPercentage >= 20 && amoutAccomplidshedPercentage < 40,
                 ["bg-violet-700 border-violet-500"] : 
-                amoutAccomplidshedPercentage > 40 && amoutAccomplidshedPercentage < 60,
+                amoutAccomplidshedPercentage >= 40 && amoutAccomplidshedPercentage < 60,
                 ["bg-violet-600 border-violet-500"] : 
-                amoutAccomplidshedPercentage > 60 && amoutAccomplidshedPercentage < 80,
+                amoutAccomplidshedPercentage >= 60 && amoutAccomplidshedPercentage < 80,
                 ["bg-violet-500 border-violet-400"] : 
-                amoutAccomplidshedPercentage > 80,
+                amoutAccomplidshedPercentage >= 80,
                 ["border-white border-4"] : isCurrentDay
                
 

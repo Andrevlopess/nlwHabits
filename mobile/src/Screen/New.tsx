@@ -32,7 +32,7 @@ export const New = (props: Props) => {
     async function handleCreateNewhabit(){
         try{
             if(!title.trim() || weekDays.length === 0 ){
-                Alert.alert('Novo Hábito', 'Informe o nome do Hábito e escolha a recorrencia.')
+               return Alert.alert('Novo Hábito', 'Informe o nome do Hábito e escolha a recorrencia.')
             }
 
             await api.post('/habits', {title, weekDays})
@@ -82,6 +82,7 @@ export const New = (props: Props) => {
                             title={weekDay}
                             checked={weekDays.includes(index)}
                             onPress={() => handleToggleWeekDay(index)}
+                            
                         />
                     ))
                 }
