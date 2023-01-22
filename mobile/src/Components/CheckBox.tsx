@@ -1,6 +1,7 @@
 import { TouchableOpacity, View, Text, TouchableOpacityProps, Alert} from "react-native";
 import { Feather } from '@expo/vector-icons'
 import colors from 'tailwindcss/colors'
+import Animated , {ZoomIn, ZoomInDown, ZoomInEasyUp, ZoomInRotate, ZoomOutEasyUp, ZoomOutRotate} from "react-native-reanimated";
 
 interface Props extends TouchableOpacityProps {
     checked?: boolean;
@@ -26,12 +27,15 @@ export function CheckBox({ title, checked = false, isPastDate, ...rest }: Props)
             className="flex-row mb-2 items-center"
             {...rest}>
             {checked ?
-                <View className="h-8 w-8 bg-green-500 rounded-lg justify-center items-center">
+                <Animated.View
+                 className="h-8 w-8 bg-green-500 rounded-lg justify-center items-center"
+                 entering={ZoomInRotate}
+                 exiting={ZoomOutRotate}>
                     <Feather
                         name="check"
                         size={20}
                         color={colors.white} />
-                </View>
+                </Animated.View>
                 :
                 isPastDate ?
                     <View className="h-8 w-8 bg-zinc-900 rounded-lg justify-center items-center">
